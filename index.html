@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Circle</title>
+	<style>
+		.circle{
+			height: 100px;
+			width: 100px;
+			background-color: red;;
+			border-radius: 50%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="circle"></div>
+	<script>
+		let div = document.querySelector(".circle");
+
+		function moveCircle(){
+			let num = Math.random(); //1.маленькое число от 0 до 1 
+			let width_num = num * 1600; //2. делаем большое число умножая на ширину экрана
+			let height_num = num * 800;
+			let x1 = Math.round(width_num); //3. делаем число целым с попомщью переменной "ROUND"
+			let x2 = Math.round(height_num);
+
+			console.log(x1); //показывает число в консоле 
+			console.log(x2)
+
+			div.style.left = x1 + "px";	
+			div.style.top = x2 + "px"		
+		}
+		setInterval(moveCircle, 2000)
+
+	</script>
+</body>
+</html>
